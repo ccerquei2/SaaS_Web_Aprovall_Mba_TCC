@@ -42,7 +42,7 @@ export default function SettingsPage() {
       <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
         <h2 className="text-lg font-semibold text-slate-900">Saídas e portabilidade de dados</h2>
         <p className="mt-2 text-sm text-slate-600">
-          Gere o dataset sintético completo em JSON para auditorias ou exercícios em sala de aula.
+          Gere o dataset sintético completo em JSON para auditorias.
         </p>
         <a
           href="/api/export"
