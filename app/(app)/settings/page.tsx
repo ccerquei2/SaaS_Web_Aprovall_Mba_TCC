@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 const providers = [
-  { name: 'LLM Provider', value: 'Analisa Synthetic LLM v0.4', status: 'Simulado localmente' },
+  { name: 'LLM Provider', value: 'GPT 5 Thinking', status: 'Simulado' },
   { name: 'ERP / SAP', value: 'Connector sandbox', status: 'Mock in-memory' },
-  { name: 'E-mail / Alerta', value: 'Fila SMTP fake', status: 'Mensagens não enviadas' }
+  { name: 'E-mail / Alerta', value: 'Fila SMTP', status: 'Mensagens não enviadas' }
 ];
 
 export default function SettingsPage() {
