@@ -54,7 +54,7 @@ export default function HelpPage() {
       <section className="rounded-2xl border border-rose-200 bg-rose-50 p-4 text-sm text-rose-600">
         <p className="font-semibold">Demo only / Dados sintéticos</p>
         <p>
-          Nenhuma integração com sistemas reais é executada. Use livremente em sala de aula e comitês executivos sem risco de
+          Nenhuma integração com sistemas reais é executada. Use livremente em comitês executivos sem risco de
           exposição.
         </p>
       </section>
