@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+[data-theme='dark'] body {
+  @apply bg-slate-950 text-slate-100;
+}
+
+.screenshot-mode body {
+  font-size: 1.05rem;
+}
+
+.screenshot-mode .hide-in-screenshot {
+  display: none !important;
+}
+
+.screenshot-mode .screenshot-surface {
+  @apply bg-white text-black shadow-none;
+}
+
+.print-surface {
+  @apply bg-white text-slate-900;
+}
+
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  .hide-on-print {
+    display: none !important;
+  }
+  .print-visible {
+    display: block !important;
+  }
+}
