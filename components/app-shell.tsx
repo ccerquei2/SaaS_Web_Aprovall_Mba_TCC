@@ -9,6 +9,7 @@ import { Search, Camera, LogOut, Menu } from 'lucide-react';
 
 const navItems = [
   { href: '/dashboard', label: 'Visão Geral' },
+  { href: '/explainability', label: 'Explicabilidade IA' },
   { href: '/orders', label: 'Ordens de Serviço' },
   { href: '/audit', label: 'Auditoria' },
   { href: '/policies', label: 'Regras KO' },

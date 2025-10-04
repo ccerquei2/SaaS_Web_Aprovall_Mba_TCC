@@ -1,14 +1,26 @@
-import { getKpis, getSegmentMix, getTrendData, getTodayAnomalies } from '@/lib/metrics';
+import { getApprovalPathSimulation, getKpis, getTrendData, getTodayAnomalies } from '@/lib/metrics';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { KpiTrendChart } from '@/components/charts/kpi-trend';
-import { SegmentPie } from '@/components/charts/segment-pie';
+import { ApprovalPathChart } from '@/components/charts/approval-path';
 import Link from 'next/link';
 
 export default async function DashboardPage() {
   const kpis = getKpis();
-  const segmentMix = getSegmentMix();
+  const approvalPath = getApprovalPathSimulation();
   const trend = getTrendData().slice(-14);
   const anomalies = getTodayAnomalies(6);
+
+  const totals = approvalPath.reduce(
+    (acc, item) => {
+      acc.simulated += item.simulated;
+      acc.baseline += item.baseline;
+      return acc;
+    },
+    { simulated: 0, baseline: 0 }
+  );
+  const directShare = approvalPath.length
+    ? Math.round((approvalPath[0].simulated / (totals.simulated || 1)) * 100)
+    : 0;
 
   const kpiItems = [
     {
@@ -76,11 +88,17 @@ export default async function DashboardPage() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Mix por segmento</CardTitle>
-            <CardDescription>Distribuição das 24 plantas.</CardDescription>
+            <CardTitle>Fluxo de aprovação</CardTitle>
+            <CardDescription>
+              Projeção sintética: {directShare}% das ordens seguem para aprovação direta com o motor de IA.
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <SegmentPie data={segmentMix} />
+            <ApprovalPathChart data={approvalPath} />
+            <p className="mt-4 text-sm text-slate-600">
+              O cenário simulado considera expansão das regras explicáveis e treinamento contínuo: redução de{' '}
+              {(totals.baseline - totals.simulated).toLocaleString('pt-BR')} análises humanas versus a base atual.
+            </p>
           </CardContent>
         </Card>
       </div>
