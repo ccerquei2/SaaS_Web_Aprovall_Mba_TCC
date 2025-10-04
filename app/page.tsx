@@ -43,8 +43,8 @@ export default function LandingPage() {
         <div id="sobre" className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 text-left shadow-sm">
           <h2 className="text-2xl font-semibold text-slate-900">Como informamos, testamos e vendemos</h2>
           <p className="mt-4 text-sm text-slate-600">
-            Este MVP foi projetado para uso em sala de aula e comitês executivos. Tudo é simulado localmente: dados,
-            aprovações, integrações e modelos de IA. Você pode navegar sem medo de expor informações sensíveis.
+            Para fins de demonstração, foi desenvolvido este MVP conceitual, sem integração com bancos de dados ou APIs reais, 
+            destinado a apresentar o fluxo das telas e validar o desenho funcional proposto.
           </p>
           <ul className="mt-6 grid gap-4 sm:grid-cols-3">
             <li className="rounded-xl bg-slate-50 p-4">
