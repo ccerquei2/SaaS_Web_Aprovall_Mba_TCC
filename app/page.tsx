@@ -8,10 +8,12 @@ export default function LandingPage() {
           Analisa IA – Aprovação Automática de Ordens de Serviço
         </h1>
         <p className="mt-4 text-lg text-slate-600">
-          MBA em Tecnologia para Negócios: AI, Data Science e Big Data  - Aprovação de Ordens de Produção Assistida por IA.
+          MBA em Tecnologia para Negócios: AI, Data Science e Big Data 
+          <p></p>
+          Aprovação de Ordens de Produção Assistida por IA
           <p></p>
           Este trabalho apresenta um MVP conceitual, construído com dados sintéticos, que simula uma aplicação SaaS voltada à aceleração 
-          da análise de custos de produção, aprovação de ordens, redução de riscos e garantia de conformidade, utilizando agentes de Inteligência Artificial.
+          da análise de custos de produção, aprovação de ordens, redução de riscos e garantia de conformidade, utilizando Machine Learning e Agentes de Inteligência Artificial.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           <div className="rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm">
@@ -43,7 +45,7 @@ export default function LandingPage() {
           </div>
         </div>
         <div id="sobre" className="mt-16 rounded-2xl border border-slate-200 bg-white p-8 text-left shadow-sm">
-          <h2 className="text-2xl font-semibold text-slate-900">Como informamos, testamos e vendemos</h2>
+          <h2 className="text-2xl font-semibold text-slate-900">Como Informamos, Testamos e Entregamos Valor</h2>
           <p className="mt-4 text-sm text-slate-600">
             Para fins de demonstração, foi desenvolvido este MVP conceitual, sem integração com bancos de dados ou APIs reais, 
             destinado a apresentar o fluxo das telas e validar o desenho funcional proposto.
