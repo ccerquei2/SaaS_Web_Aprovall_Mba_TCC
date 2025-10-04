@@ -8,8 +8,9 @@ export default function LandingPage() {
           Analisa IA – Aprovação Automática de Ordens de Serviço
         </h1>
         <p className="mt-4 text-lg text-slate-600">
-          Demonstração pública com dados sintéticos que revela como a Controladoria pode acelerar aprovações, reduzir
-          riscos e manter a conformidade sem depender de integrações reais.
+          MBA em Tecnologia para Negócios: AI, Data Science e Big Data  - Aprovação de Ordens de Produção Assistida por IA
+          Este trabalho apresenta um MVP conceitual, construído com dados sintéticos, que simula uma aplicação SaaS voltada à aceleração 
+          da análise de custos de produção, aprovação de ordens, redução de riscos e garantia de conformidade, utilizando agentes de Inteligência Artificial.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           <div className="rounded-2xl border border-slate-200 bg-white p-6 text-left shadow-sm">
