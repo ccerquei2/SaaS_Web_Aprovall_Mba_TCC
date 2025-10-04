@@ -1,12 +1,12 @@
-import { getKpis, getSegmentMix, getTrendData, getTodayAnomalies } from '@/lib/metrics';
+import { getApprovalFlowBreakdown, getKpis, getTrendData, getTodayAnomalies } from '@/lib/metrics';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { KpiTrendChart } from '@/components/charts/kpi-trend';
-import { SegmentPie } from '@/components/charts/segment-pie';
+import { ApprovalMixChart } from '@/components/charts/approval-mix';
 import Link from 'next/link';
 
 export default async function DashboardPage() {
   const kpis = getKpis();
-  const segmentMix = getSegmentMix();
+  const approvalBreakdown = getApprovalFlowBreakdown();
   const trend = getTrendData().slice(-14);
   const anomalies = getTodayAnomalies(6);
 
@@ -76,11 +76,21 @@ export default async function DashboardPage() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Mix por segmento</CardTitle>
-            <CardDescription>Distribuição das 24 plantas.</CardDescription>
+            <CardTitle>Fluxo de aprovação automatizada</CardTitle>
+            <CardDescription>Distribuição sintética entre motor IA, fábrica e escalonamentos.</CardDescription>
           </CardHeader>
-          <CardContent>
-            <SegmentPie data={segmentMix} />
+          <CardContent className="space-y-4">
+            <ApprovalMixChart data={approvalBreakdown.items} />
+            <div className="space-y-2 text-sm text-slate-600">
+              {approvalBreakdown.items.map((item) => (
+                <div key={item.key} className="flex items-center justify-between rounded-md bg-slate-50 px-3 py-2">
+                  <span>{item.label}</span>
+                  <span className="font-semibold text-slate-900">
+                    {item.value} ordens · {item.percentage}%
+                  </span>
+                </div>
+              ))}
+            </div>
           </CardContent>
         </Card>
       </div>

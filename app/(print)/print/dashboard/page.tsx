@@ -1,8 +1,8 @@
-import { getKpis, getSegmentMix, getTrendData } from '@/lib/metrics';
+import { getApprovalFlowBreakdown, getKpis, getTrendData } from '@/lib/metrics';
 
 export default function PrintDashboardPage() {
   const kpis = getKpis();
-  const segmentMix = getSegmentMix();
+  const approvalBreakdown = getApprovalFlowBreakdown();
   const trend = getTrendData().slice(-7);
 
   return (
@@ -59,15 +59,26 @@ export default function PrintDashboardPage() {
         </table>
       </section>
       <section className="rounded-xl border border-slate-200 p-4">
-        <h2 className="text-sm font-semibold text-slate-900">Mix de segmentos</h2>
-        <ul className="mt-2 grid grid-cols-2 gap-3 text-xs text-slate-600">
-          {segmentMix.map((item) => (
-            <li key={item.segment} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-              <p className="font-semibold text-slate-900">Segmento {item.segment}</p>
-              <p>{item.value} ordens em fila</p>
-            </li>
-          ))}
-        </ul>
+        <h2 className="text-sm font-semibold text-slate-900">Fluxo de aprovação automatizada</h2>
+        <p className="mt-1 text-xs text-slate-500">Motor analítico Aurora calibrado para priorizar aprovação direta.</p>
+        <table className="mt-3 w-full text-left text-xs text-slate-600">
+          <thead>
+            <tr className="text-slate-400">
+              <th className="py-2">Etapa</th>
+              <th>Volume</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100">
+            {approvalBreakdown.items.map((item) => (
+              <tr key={item.key}>
+                <td className="py-2">{item.label}</td>
+                <td>{item.value} ordens</td>
+                <td>{item.percentage}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
     </div>
   );
