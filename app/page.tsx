@@ -8,7 +8,8 @@ export default function LandingPage() {
           Analisa IA – Aprovação Automática de Ordens de Serviço
         </h1>
         <p className="mt-4 text-lg text-slate-600">
-          MBA em Tecnologia para Negócios: AI, Data Science e Big Data  - Aprovação de Ordens de Produção Assistida por IA
+          MBA em Tecnologia para Negócios: AI, Data Science e Big Data  - Aprovação de Ordens de Produção Assistida por IA.
+          <p></p>
           Este trabalho apresenta um MVP conceitual, construído com dados sintéticos, que simula uma aplicação SaaS voltada à aceleração 
           da análise de custos de produção, aprovação de ordens, redução de riscos e garantia de conformidade, utilizando agentes de Inteligência Artificial.
         </p>
