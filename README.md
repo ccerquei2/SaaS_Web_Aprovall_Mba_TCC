@@ -47,4 +47,4 @@ npm start
 
 ## Disclaimer
 
-Esta é uma demonstração. Nenhum dado real de clientes, ERP, e-mail ou LLM é utilizado. Utilize livremente para estudos, apresentações e capturas de tela em trabalhos acadêmicos.
+Esta é uma demonstração. Nenhum dado real de clientes, ERP, e-mail ou LLM é utilizado.
